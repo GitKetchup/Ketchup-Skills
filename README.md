@@ -4,6 +4,8 @@
   # Ketchup Skills
   
   **Premium AI Agent Skills for the Ketchup Ecosystem**
+  <p><i>Catch up on your code.</i></p>
+
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   [![Skills.sh](https://img.shields.io/badge/Skills.sh-Compatible-blueviolet)](https://skills.sh)
@@ -74,5 +76,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by the <a href="https://gitketchup.io">Ketchup Team</a>. Powered by <b>NanoBanana</b> technology.</sub>
+  <sub>Built with ❤️ by the <a href="https://gitketchup.io">Ketchup Team</a>.
 </div>
