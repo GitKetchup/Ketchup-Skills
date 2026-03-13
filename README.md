@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="assets/hero.png" alt="Ketchup Skills Hero" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
+    <img alt="Ketchup Logo" src="assets/logo-light.svg" width="400">
+  </picture>
 
   # Ketchup Skills
   
