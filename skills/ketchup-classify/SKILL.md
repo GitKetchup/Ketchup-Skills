@@ -60,10 +60,30 @@ Agent:
 ketchup mcp
 
 # Tools exposed:
-# - classify_commits(repo_path, days)
-# - discover_features(repo_path, days)
-# - extract_prs(repo_path, days)
+# - create_recap(days, style) — classify + cluster + generate video
+# - list_features(limit) — list discovered features
+# - get_recap_status(jobId) — check generation status
 ```
+
+### LLM Quick Mode (No Python Required)
+
+If you're an AI assistant with access to the commit history, you can classify
+commits **directly** using this taxonomy — no script needed. This is faster
+and more accurate for small batches:
+
+1. Read the **Classification Taxonomy** table below
+2. For each commit, assign a `type` based on the message + metadata
+3. Group related commits into features by:
+   - Shared keywords (auth, dashboard, api)
+   - Temporal proximity (commits within 2 hours)
+   - Similar file-change patterns (stats ratios)
+4. For messy/vibe-coder commits ("wip", "stuff"), use:
+   - Addition/deletion ratio (high additions = feature, balanced = refactor)
+   - File count (1-2 files = fix, 5+ files = feature/refactor)
+   - Timing (rapid-fire = iterating on same feature)
+
+The Python script (`scripts/classify.py`) remains available as a fallback for
+bulk/offline classification of 500+ commits.
 
 ## Options
 

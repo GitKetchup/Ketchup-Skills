@@ -24,15 +24,16 @@ These skills power Ketchup's code intelligence and work with any AI assistant (C
 
 ## 🥑 The Menu
 
-### 🏷️ Core Intelligence
+### ⚡ Quick Start
 | Skill | Description | API Key? | Status |
 |-------|-------------|----------|--------|
+| **[`ketchup-recap`](/skills/ketchup-recap)** | **Quick Recap**. Generate video recaps from git commits in < 3 min. | ❌ None needed | ✅ Live |
 | **[`ketchup-classify`](/skills/ketchup-classify)** | **Commit Intelligence**. Classifies commits, discovers features, extracts PRs. | ❌ None needed | ✅ Live |
-| **[`ketchup-changelog`](/skills/ketchup-changelog)** | **Git to Story**. Complexity, security, momentum, process analysis via MCP. | Optional (cloud) | ✅ Live |
 
-### 🔍 Analysis Tools
+### 🔍 Analysis & Visualization
 | Skill | Description | API Key? | Status |
 |-------|-------------|----------|--------|
+| **[`ketchup-changelog`](/skills/ketchup-changelog)** | **Git to Story**. Complexity, security, momentum, process analysis via MCP. | Optional (cloud) | ✅ Live |
 | **[`ketchup-diff-analyzer`](/skills/ketchup-diff-analyzer)** | **Diff to English**. LLM-powered code change explanations. | ✅ BYOK | ✅ Live |
 | **[`ketchup-code-viz`](/skills/ketchup-code-viz)** | **Code Images**. Syntax-highlighted diff screenshots. | ❌ None needed | ✅ Live |
 
@@ -45,22 +46,16 @@ These skills power Ketchup's code intelligence and work with any AI assistant (C
 # Install the CLI (skills are built-in)
 npm install -g @gitketchup/cli
 
-# Classification runs automatically during sync
-ketchup sync
+# Generate a recap video
+ketchup cloud recap
 
 # Or use the MCP server for AI assistant integration
 ketchup mcp
 ```
 
-### Standalone (pip)
-```bash
-# Coming soon
-pip install ketchup-skills
-```
-
 ### Via Skills.sh
 ```bash
-npx skills add gitketchup/ketchup-skills --skill ketchup-classify
+npx skills add gitketchup/ketchup-skills --skill ketchup-recap
 ```
 
 ### Direct (clone)
@@ -76,13 +71,13 @@ python scripts/classify.py --repo /your/repo --features --json
 
 All skills are **MCP-compatible**. Tell your AI:
 
-> "Classify my last 30 days of commits using the ketchup-classify SKILL.md"
+> "Generate a recap of what I built this week using the ketchup-recap skill"
 
 The agent will:
-1. Read `SKILL.md` to understand the taxonomy
-2. Run `classify.py` to get rule-based results
-3. Optionally use its own LLM intelligence to reclassify low-confidence commits
-4. Group results into feature clusters
+1. Read `SKILL.md` to understand the workflow
+2. Extract commits via `git log`
+3. Cluster commits into features using AI
+4. Call the Ketchup API to generate a video
 
 ### BYOK (Bring Your Own Key)
 
